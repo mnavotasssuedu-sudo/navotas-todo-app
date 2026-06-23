@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,5 @@ Route::delete('/todos/{todo}', [TodoController::class, 'destroy'])->name('todos.
 Route::get('/dashboard', function () {
     return redirect()->route('todos.index');
 })->name('dashboard');
+
+Route::resource('students', StudentController::class);
